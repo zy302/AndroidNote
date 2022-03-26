@@ -1,0 +1,19 @@
+  本周的任务是自学书上49-69页的内容，包括通知、菜单和样式资源。
+  首先学习了Notification类，Notification类封装了通知的标题、内容、时间、小图标等信息。官方还提供了多种样式的展开式通知，如大图片、大段文本、收件箱样式、对话样式和媒体控制样式等，甚至还能自定义通知视图及直接回复等。从中我学会了如何创建和使用通知。
+  通知：
+  小图标，通过 setSmallIcon() 设置。这是所必需的唯一用户可见内容。
+  标题，通过 setContentTitle() 设置。
+  正文文本，通过 setContentText() 设置。
+  通知优先级，通过 setPriority() 设置。优先级确定通知在 Android 7.1 和更低版本上的干扰程度。
+
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.notification_icon)
+            .setContentTitle(textTitle)
+            .setContentText(textContent)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+  我跟着书敲了代码，更清楚的认识了Notification。
+   还有PendingIntent。通知不仅要弹出提醒用户，还要给出概要信息，这时就需要使用PendingIntent。PendingIntent的典型使用场景包括闹钟、通知和桌面部件。
+  PendingIntent实例对象可以调用PendingIntent的getActivity()、getBroadcast()和getService()等方法获取，它们分别对应Activity、Broadcast和Service三个组件的应用，这些方法的参数都是相同的，共有4个参数：Context、requestCode、Intent和flags，分别对应上下文对象、请求码、请求意图和关键标志位。
+
+  最后就是菜单menu了。menu可以直接在res里创建实现，也可在Activity中添加。我从中学习了选项菜单，上下文菜单和菜单。并利用它们完成了作业。
+   
